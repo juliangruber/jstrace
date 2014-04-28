@@ -1,7 +1,7 @@
 
 exports.remote = function(){
   // console.* calls relay to the local client
-  setInterval(function(){
+  var id = setInterval(function(){
     console.log({
       user: {
         name: {
@@ -11,4 +11,8 @@ exports.remote = function(){
       }
     });
   }, 100);
+
+  return function unsubscribe(){
+    clearInterval(id);
+  };
 };
