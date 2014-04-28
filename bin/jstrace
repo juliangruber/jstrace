@@ -48,3 +48,12 @@ var local = new Local({
 if (mod.local) mod.local(local);
 
 local.start();
+
+// clean up
+
+process.on('SIGINT', function(){
+  local.cleanup(function(err){
+    if (err) throw err;
+    process.exit(1);
+  });
+});
