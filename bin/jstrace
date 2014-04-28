@@ -51,9 +51,14 @@ local.start();
 
 // clean up
 
-process.on('SIGINT', function(){
+process.once('SIGINT', function(){
   local.cleanup(function(err){
     if (err) throw err;
     process.exit(1);
   });
+
+  setTimeout(function(){
+    console.error('jstrace cleanup timed out');
+    process.exit(1);
+  }, 5000);
 });
