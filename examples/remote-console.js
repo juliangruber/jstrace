@@ -1,5 +1,5 @@
 
-exports.remote = function(){
+exports.remote = function(traces){
   // console.* calls relay to the local client
   var id = setInterval(function(){
     console.log({
@@ -12,7 +12,7 @@ exports.remote = function(){
     });
   }, 100);
 
-  return function unsubscribe(){
+  traces.on('cleanup', function(){
     clearInterval(id);
-  };
+  });
 };
