@@ -11,15 +11,15 @@
     "debugging"
   ],
   "dependencies": {
-    "commander": "~2.1.0",
-    "debug": "~0.7.4",
-    "actorify": "~0.1.0",
-    "backo": "~1.0.1",
+    "commander": "~2.9.0",
+    "debug": "~2.3.0",
+    "actorify": "~1.0.0",
+    "backo": "~1.1.0",
     "escape-regexp": "0.0.1"
   },
   "devDependencies": {
     "bars": "git://github.com/jstrace/bars",
-    "bytes": "^0.3.0",
+    "bytes": "^2.4.0",
     "chart": "git://github.com/jstrace/chart",
     "clear": "0.0.1",
     "histogram": "git://github.com/jstrace/histogram",
